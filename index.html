@@ -24,39 +24,42 @@ body, html {
     align-items: center;
     justify-content: center;
     padding: 15px;
-    background-color: #1a237e;
-    color: white;
+    background-color: #ffffff; /* WHITE background */
+    color: black; /* Default text color black */
     position: relative;
     gap: 15px;
 }
 
-/* HB LOGO (CSS-created) */
+/* LOGO IMAGE (replaces “HB”) */
 .hb-logo {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #ffd700, #ff6b4a);
     border-radius: 50%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: #1a237e;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: none;
+}
+
+.hb-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Header Title */
 .header h1 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 2.8em; /* slightly bigger for visibility */
+    font-size: 2.8em;
     margin: 0;
     font-weight: 700;
     text-align: center;
-    color: #ffd700;
+    color: #000000; /* BLACK title */
 }
 
-/* Gradient underline */
+/* Underline */
 .header::after {
     content: '';
     position: absolute;
@@ -64,7 +67,7 @@ body, html {
     left: 25%;
     width: 50%;
     height: 3px;
-    background: linear-gradient(90deg, #ff6b4a, #1a237e);
+    background: linear-gradient(90deg, #000000, #555555); /* black → grey */
     border-radius: 3px;
 }
 
@@ -163,7 +166,7 @@ body, html {
     border-radius: 3px;
 }
 
-/* IFRAME */
+/* IFRAME WRAPPER */
 .iframe-wrapper {
     position: relative;
     z-index: 1;
@@ -209,7 +212,9 @@ footer::before {
 
 <!-- HEADER -->
 <div class="header">
-    <div class="hb-logo">HB</div>
+    <div class="hb-logo">
+        <img src="https://raw.githubusercontent.com/HomeBakery/HB_Logo/main/HB.jpg" alt="Home Bakery Logo">
+    </div>
     <h1>HOME BAKERY</h1>
 </div>
 
@@ -222,7 +227,12 @@ footer::before {
                 <span class="analysis-text">Sales Mix Analysis</span>
             </span>
         </h2>
-       <iframe title="Product Mix" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=070ed068-b1fb-4436-95d0-e3c7a2b0e2f5&autoAuth=true&ctid=59201bac-affb-445d-9fc1-5968f12e7184" frameborder="0" allowFullScreen="true"></iframe>
+
+        <iframe title="Product Mix" width="1140" height="541.25" 
+            src="https://app.powerbi.com/reportEmbed?reportId=070ed068-b1fb-4436-95d0-e3c7a2b0e2f5&autoAuth=true&ctid=59201bac-affb-445d-9fc1-5968f12e7184" 
+            frameborder="0" allowFullScreen="true">
+        </iframe>
+
     </div>
 </div>
 
@@ -233,6 +243,3 @@ footer::before {
 
 </body>
 </html>
-
-
-
